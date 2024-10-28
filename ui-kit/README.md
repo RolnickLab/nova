@@ -1,6 +1,6 @@
-# Fg Nova UI Kit
+# Nova UI Kit
 
-This is the start of the code version of Fg Nova UI Kit. We use [shadcn/ui](https://ui.shadcn.com/) as a component reference. Components are built using [Radix UI](https://www.radix-ui.com/) and [Tailwind CSS](https://tailwindcss.com/). We use [Storybook](https://storybook.js.org/) as a visual and interactive documentation of the code version of the UI Kit.
+This is the start of the code version of Nova UI Kit. We use [shadcn/ui](https://ui.shadcn.com/) as a component reference. Components are built using [Radix UI](https://www.radix-ui.com/) and [Tailwind CSS](https://tailwindcss.com/). We use [Storybook](https://storybook.js.org/) as a visual and interactive documentation of the code version of the UI Kit.
 
 ## System requirements
 
