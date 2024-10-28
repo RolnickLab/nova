@@ -29,6 +29,6 @@ export default meta;
 
 type Story = StoryObj<typeof Select>;
 
-export const Default: Story = {};
+export const Default: Story = { args: { disabled: false } };
 
-export const Disabled: Story = { args: { disabled: true } };
+export const Disabled: Story = { args: { ...Default.args, disabled: true } };

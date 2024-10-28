@@ -15,15 +15,15 @@ export default meta;
 
 type Story = StoryObj<typeof Box>;
 
-export const WithLabel: Story = {
+export const Default: Story = {
   args: {
-    label: "Filters",
     children: <Placeholder label="Content placeholder" />,
   },
 };
 
-export const WithoutLabel: Story = {
+export const WithLabel: Story = {
   args: {
-    children: <Placeholder label="Content placeholder" />,
+    ...Default.args,
+    label: "Filters",
   },
 };
