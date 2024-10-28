@@ -46,14 +46,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 100%; /* generic-white */
     --foreground: 235 39% 11%; /* neutral-900 */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --card: 0 0% 100%; /* generic-white */
+    --card-foreground: 235 39% 11%; /* neutral-900 */
+    --popover: 0 0% 100%; /* generic-white */
+    --popover-foreground: 235 39% 11%; /* neutral-900 */
+    --primary: 231 37% 37%; /* primary-600 */
+    --primary-foreground: 0 0% 100%; /* generic-white */
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 220 27% 98%; /* neutral-50 */
