@@ -1,6 +1,6 @@
 {
   "name": "nova-ui-kit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Component library for multiple apps related to insect monitoring.",
   "repository": {
@@ -17,13 +17,13 @@
     "url": "https://github.com/RolnickLab/nova/issues"
   },
   "homepage": "https://nova-ui-kit.netlify.app",
-  "main": "./dist/nova-ui-kit.umd.js",
-  "module": "./dist/nova-ui-kit.es.js",
-  "types": "./dist/nova-ui-kit.es.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/nova-ui-kit.es.js",
-      "require": "./dist/nova-ui-kit.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.js"
     }
   },
   "files": [
@@ -37,7 +37,7 @@
     "format": "prettier \"**/*.{ts,tsx,css,json}\" --write",
     "preview": "vite preview",
     "storybook": "storybook dev -p 5174",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.2",

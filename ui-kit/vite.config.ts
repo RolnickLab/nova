@@ -8,14 +8,16 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true,
+      tsconfigPath: "./tsconfig.app.json",
+      include: ["./src/index.ts", "./src/components"],
+      exclude: ["./**/*.stories.tsx", "./src/components/Placeholder"],
     }),
   ],
   build: {
     lib: {
       entry: "./src/index.ts",
       name: "nova-ui-kit",
-      fileName: (format) => `nova-ui-kit.${format}.js`,
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
