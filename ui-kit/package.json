@@ -19,6 +19,7 @@
   "homepage": "https://nova-ui-kit.netlify.app",
   "main": "./dist/nova-ui-kit.umd.js",
   "module": "./dist/nova-ui-kit.es.js",
+  "types": "./dist/nova-ui-kit.es.d.ts",
   "exports": {
     ".": {
       "import": "./dist/nova-ui-kit.es.js",
@@ -76,7 +77,8 @@
     "tailwindcss": "^3.4.13",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.7.0",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.3.0"
   },
   "eslintConfig": {
     "extends": [
