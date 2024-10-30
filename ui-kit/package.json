@@ -1,8 +1,24 @@
 {
-  "name": "ui-kit",
+  "name": "nova-ui-kit",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "description": "Component library for multiple apps related to insect monitoring.",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RolnickLab/nova.git"
+  },
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "author": "annavik",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/RolnickLab/nova/issues"
+  },
+  "homepage": "https://nova-ui-kit.netlify.app",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
