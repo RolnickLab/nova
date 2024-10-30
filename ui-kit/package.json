@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "type": "module",
   "description": "Component library for multiple apps related to insect monitoring.",
-  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RolnickLab/nova.git"
@@ -19,6 +18,14 @@
     "url": "https://github.com/RolnickLab/nova/issues"
   },
   "homepage": "https://nova-ui-kit.netlify.app",
+  "main": "./dist/nova-ui-kit.umd.js",
+  "module": "./dist/nova-ui-kit.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/nova-ui-kit.es.js",
+      "require": "./dist/nova-ui-kit.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
