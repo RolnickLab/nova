@@ -1,4 +1,4 @@
-export const COLORS = {
+const COLORS = {
   generic: { white: "#FFFFFF", black: "#000000" },
   neutral: {
     50: "#F8F9FB",
@@ -86,13 +86,13 @@ export const COLORS = {
   },
 };
 
-export const GRADIENTS = {
+const GRADIENTS = {
   fieldguide: "linear-gradient(103deg, #5193F0 0%, #F476A4 108%)",
   antenna:
     "linear-gradient(102deg, #858FC7 -13.31%, #606BA4 21.25%, #313B72 100%)",
 };
 
-export const COLOR_THEME = {
+const COLOR_THEME = {
   background: COLORS.generic.white,
   foreground: COLORS.neutral[900],
   card: {
@@ -126,4 +126,10 @@ export const COLOR_THEME = {
   border: COLORS.neutral[200],
   input: COLORS.neutral[200],
   ring: COLORS.neutral[900],
+};
+
+export const CONSTANTS = {
+  COLORS,
+  GRADIENTS,
+  COLOR_THEME,
 };

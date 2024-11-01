@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-import { COLORS, COLOR_THEME, GRADIENTS } from "./src/lib/constants";
+import { CONSTANTS } from "./src/lib/constants";
 
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx,mdx}"],
   theme: {
-    colors: COLORS,
+    colors: CONSTANTS.COLORS,
     extend: {
-      backgroundImage: GRADIENTS,
-      colors: COLOR_THEME,
+      backgroundImage: CONSTANTS.GRADIENTS,
+      colors: CONSTANTS.COLOR_THEME,
     },
   },
   plugins: [require("tailwindcss-animate")],
