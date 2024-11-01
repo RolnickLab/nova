@@ -1,6 +1,6 @@
 {
   "name": "nova-ui-kit",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "type": "module",
   "description": "Component library for multiple apps related to insect monitoring.",
   "repository": {
