@@ -23,7 +23,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.es.js"
     },
     "./dist/*.css": {
       "import": "./dist/*.css",
