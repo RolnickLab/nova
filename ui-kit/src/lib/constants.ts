@@ -1,4 +1,4 @@
-export const COLORS = {
+const COLORS = {
   generic: { white: "#FFFFFF", black: "#000000" },
   neutral: {
     50: "#F8F9FB",
@@ -84,4 +84,52 @@ export const COLORS = {
     800: "#AD0505",
     900: "#830101",
   },
+};
+
+const GRADIENTS = {
+  fieldguide: "linear-gradient(103deg, #5193F0 0%, #F476A4 108%)",
+  antenna:
+    "linear-gradient(102deg, #858FC7 -13.31%, #606BA4 21.25%, #313B72 100%)",
+};
+
+const COLOR_THEME = {
+  background: COLORS.generic.white,
+  foreground: COLORS.neutral[900],
+  card: {
+    DEFAULT: COLORS.generic.white,
+    foreground: COLORS.neutral[900],
+  },
+  popover: {
+    DEFAULT: COLORS.generic.white,
+    foreground: COLORS.neutral[900],
+  },
+  primary: {
+    DEFAULT: COLORS.primary[600],
+    foreground: COLORS.generic.white,
+  },
+  secondary: {
+    DEFAULT: COLORS.secondary[500],
+    foreground: COLORS.generic.white,
+  },
+  muted: {
+    DEFAULT: COLORS.neutral[50],
+    foreground: COLORS.neutral[600],
+  },
+  accent: {
+    DEFAULT: COLORS.alert[500],
+    foreground: COLORS.generic.white,
+  },
+  destructive: {
+    DEFAULT: COLORS.destructive[500],
+    foreground: COLORS.generic.white,
+  },
+  border: COLORS.neutral[200],
+  input: COLORS.neutral[200],
+  ring: COLORS.neutral[900],
+};
+
+export const CONSTANTS = {
+  COLORS,
+  GRADIENTS,
+  COLOR_THEME,
 };

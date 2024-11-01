@@ -1,21 +1,41 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
-import { COLORS } from "../lib/constants.ts";
+import { CONSTANTS } from "../lib/constants.ts";
 
 <Meta title="Colors" />
 
 # Colors
 
 <ColorPalette>
-  <ColorItem title="Generic" colors={COLORS.generic} />
-  <ColorItem title="Gray" subtitle="Neutral" colors={COLORS.neutral} />
-  <ColorItem title="Slate" subtitle="Primary" colors={COLORS.primary} />
-  <ColorItem title="Azure" subtitle="Secondary" colors={COLORS.secondary} />
-  <ColorItem title="Emerald" subtitle="Success" colors={COLORS.success} />
-  <ColorItem title="Pink" subtitle="Alert" colors={COLORS.alert} />
-  <ColorItem title="Amber" subtitle="Warning" colors={COLORS.warning} />
+  <ColorItem title="Generic" colors={CONSTANTS.COLORS.generic} />
+  <ColorItem
+    title="Gray"
+    subtitle="Neutral"
+    colors={CONSTANTS.COLORS.neutral}
+  />
+  <ColorItem
+    title="Slate"
+    subtitle="Primary"
+    colors={CONSTANTS.COLORS.primary}
+  />
+  <ColorItem
+    title="Azure"
+    subtitle="Secondary"
+    colors={CONSTANTS.COLORS.secondary}
+  />
+  <ColorItem
+    title="Emerald"
+    subtitle="Success"
+    colors={CONSTANTS.COLORS.success}
+  />
+  <ColorItem title="Pink" subtitle="Alert" colors={CONSTANTS.COLORS.alert} />
+  <ColorItem
+    title="Amber"
+    subtitle="Warning"
+    colors={CONSTANTS.COLORS.warning}
+  />
   <ColorItem
     title="Crimson"
     subtitle="Destructive"
-    colors={COLORS.destructive}
+    colors={CONSTANTS.COLORS.destructive}
   />
 </ColorPalette>

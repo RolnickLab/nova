@@ -23,7 +23,7 @@ export const WithLabel: Story = {
   render: (args) => (
     <>
       <label
-        className="flex pl-2 pb-3 text-muted-foreground body-overline-small font-medium"
+        className="flex pl-2 pb-3 text-muted-foreground body-overline-small font-bold"
         htmlFor={args.id}
       >
         Email
@@ -38,7 +38,7 @@ export const WithDescription: Story = {
   render: (args) => (
     <>
       <label
-        className="flex pl-2 pb-3 text-muted-foreground body-overline-small font-medium"
+        className="flex pl-2 pb-3 text-muted-foreground body-overline-small font-bold"
         htmlFor={args.id}
       >
         Email

@@ -1,8 +1,39 @@
 {
-  "name": "ui-kit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "nova-ui-kit",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Component library for multiple apps related to insect monitoring.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RolnickLab/nova.git"
+  },
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "author": "annavik",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/RolnickLab/nova/issues"
+  },
+  "homepage": "https://nova-ui-kit.netlify.app",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.es.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -10,7 +41,8 @@
     "format": "prettier \"**/*.{ts,tsx,css,json}\" --write",
     "preview": "vite preview",
     "storybook": "storybook dev -p 5174",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "pre-publish": "rm -rf dist && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.2",
@@ -50,7 +82,8 @@
     "tailwindcss": "^3.4.13",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.7.0",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.3.0"
   },
   "eslintConfig": {
     "extends": [
