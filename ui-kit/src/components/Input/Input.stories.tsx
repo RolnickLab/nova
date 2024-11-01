@@ -28,7 +28,7 @@ export const WithLabel: Story = {
       >
         Email
       </label>
-      <Input {...args} />
+      <Input {...args} className="w-64" />
     </>
   ),
 };
@@ -43,7 +43,7 @@ export const WithDescription: Story = {
       >
         Email
       </label>
-      <Input {...args} />
+      <Input {...args} className="w-64" />
       <p className="flex pl-2 pt-3 body-small text-foreground/50">
         Enter your email address.
       </p>
