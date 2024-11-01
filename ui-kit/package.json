@@ -1,6 +1,6 @@
 {
   "name": "nova-ui-kit",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "description": "Component library for multiple apps related to insect monitoring.",
   "repository": {
@@ -42,6 +42,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 5174",
     "build-storybook": "storybook build",
+    "pre-publish": "rm -rf dist && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.2",
