@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     dts({
       tsconfigPath: "./tsconfig.app.json",
-      include: ["./src/index.ts", "./src/components"],
+      include: ["./src/index.ts", "./src/components", "./src/lib/constants.ts"],
       exclude: ["./**/*.stories.tsx", "./src/components/Placeholder"],
     }),
   ],
