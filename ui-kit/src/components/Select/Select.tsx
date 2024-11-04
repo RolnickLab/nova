@@ -115,4 +115,4 @@ const Item = React.forwardRef<
 ));
 Item.displayName = SelectPrimitive.Item.displayName;
 
-export { Item, Root, Content, Trigger, Value };
+export { Content, Item, Root, Trigger, Value };

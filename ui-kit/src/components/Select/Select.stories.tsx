@@ -9,7 +9,7 @@ const meta: Meta<typeof Select.Root> = {
         <Select.Value placeholder="Select a fruit" />
       </Select.Trigger>
       <Select.Content>
-        <Select.Item value="apple">Appleee</Select.Item>
+        <Select.Item value="apple">Apple</Select.Item>
         <Select.Item value="banana">Banana</Select.Item>
         <Select.Item value="blueberry">Blueberry</Select.Item>
         <Select.Item value="grapes">Grapes</Select.Item>
