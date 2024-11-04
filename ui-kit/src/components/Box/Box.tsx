@@ -1,12 +1,14 @@
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 interface BoxProps {
+  className?: string;
   label?: string;
   children: ReactNode;
 }
 
-export const Box = ({ label, children }: BoxProps) => (
-  <div className="p-4 border rounded-xl">
+export const Box = ({ className, label, children }: BoxProps) => (
+  <div className={cn("p-4 border border-border rounded-xl", className)}>
     {label?.length ? (
       <div className="h-8 flex items-center justify-between">
         <span className="body-overline font-bold">{label}</span>
