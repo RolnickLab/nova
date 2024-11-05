@@ -3,7 +3,7 @@ import { Input } from "./Input";
 
 const meta: Meta<typeof Input> = {
   component: Input,
-  render: (args) => <Input {...args} className="w-64" />,
+  render: (args) => <Input {...args} className="w-72" />,
 };
 
 export default meta;
@@ -28,7 +28,7 @@ export const WithLabel: Story = {
       >
         Email
       </label>
-      <Input {...args} className="w-64" />
+      <Input {...args} className="w-72" />
     </>
   ),
 };
@@ -43,7 +43,7 @@ export const WithDescription: Story = {
       >
         Email
       </label>
-      <Input {...args} className="w-64" />
+      <Input {...args} className="w-72" />
       <p className="flex pl-2 pt-3 body-small text-foreground/50">
         Enter your email address.
       </p>

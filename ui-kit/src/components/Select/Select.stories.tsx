@@ -9,7 +9,7 @@ const meta: Meta<SelectArgs> = {
   component: Select.Root,
   render: ({ loading, ...args }) => (
     <Select.Root {...args}>
-      <Select.Trigger className="w-64" loading={loading}>
+      <Select.Trigger className="w-72" loading={loading}>
         <Select.Value placeholder="Select a fruit" />
       </Select.Trigger>
       <Select.Content>
