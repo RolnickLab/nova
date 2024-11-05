@@ -1,11 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import * as Select from "./Select";
 
-const meta: Meta<typeof Select.Root> = {
+type SelectArgs = React.ComponentProps<typeof Select.Root> & {
+  loading?: boolean;
+};
+
+const meta: Meta<SelectArgs> = {
   component: Select.Root,
-  render: (args) => (
+  render: ({ loading, ...args }) => (
     <Select.Root {...args}>
-      <Select.Trigger className="w-64">
+      <Select.Trigger className="w-64" loading={loading}>
         <Select.Value placeholder="Select a fruit" />
       </Select.Trigger>
       <Select.Content>
@@ -21,8 +25,10 @@ const meta: Meta<typeof Select.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Select.Root>;
+type Story = StoryObj<SelectArgs>;
 
-export const Default: Story = { args: { disabled: false } };
+export const Default: Story = { args: { disabled: false, loading: false } };
 
 export const Disabled: Story = { args: { ...Default.args, disabled: true } };
+
+export const Loading: Story = { args: { ...Default.args, loading: true } };
