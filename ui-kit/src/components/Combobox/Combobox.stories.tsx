@@ -1,25 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import * as Command from "./Command";
+import * as Command from "../Command/Command";
+import { Combobox } from "./Combobox";
 
-type CommandArgs = React.ComponentProps<typeof Command.Root> & {
-  disabled?: boolean;
-  empty?: boolean;
-  loading?: boolean;
-};
-
-const meta: Meta<CommandArgs> = {
-  component: Command.Root,
-  render: ({ disabled, empty, loading, ...args }) => (
-    <Command.Root {...args} className="w-72 border border-input rounded-md">
-      <Command.Input
-        placeholder="Search taxonomy..."
-        disabled={disabled}
-        loading={loading}
-      />
-      {!disabled && (
-        <Command.List>
-          <Command.Empty>No results found.</Command.Empty>
-          {!empty && (
+const meta: Meta<typeof Combobox> = {
+  component: Combobox,
+  argTypes: {
+    children: {
+      control: false,
+    },
+  },
+  render: (args) => (
+    <div className="w-72">
+      <Combobox {...args}>
+        <Command.Root>
+          <Command.Input placeholder="Search taxonomy..." />
+          <Command.List>
+            <Command.Empty>No results found.</Command.Empty>
             <Command.Group>
               <Command.Item value="limacodinae">
                 <Command.Taxon
@@ -59,23 +55,19 @@ const meta: Meta<CommandArgs> = {
                 />
               </Command.Item>
             </Command.Group>
-          )}
-        </Command.List>
-      )}
-    </Command.Root>
+          </Command.List>
+        </Command.Root>
+      </Combobox>
+    </div>
   ),
 };
 
 export default meta;
 
-type Story = StoryObj<CommandArgs>;
+type Story = StoryObj<typeof Combobox>;
 
 export const Default: Story = {
-  args: { disabled: false, empty: false, loading: false },
+  args: {
+    triggerLabel: "Select taxon",
+  },
 };
-
-export const Disabled: Story = { args: { ...Default.args, disabled: true } };
-
-export const Loading: Story = { args: { ...Default.args, loading: true } };
-
-export const Empty: Story = { args: { ...Default.args, empty: true } };

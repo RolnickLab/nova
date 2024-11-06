@@ -10,7 +10,7 @@ const Root = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-background text-foreground border-input border",
+      "flex h-full w-full flex-col overflow-hidden bg-background text-foreground",
       className
     )}
     {...props}
@@ -112,7 +112,7 @@ const Taxon = ({
   rank: string;
   selected?: boolean;
 }) => (
-  <div className="w-full h-full flex items-center justify-between">
+  <div className="w-full h-full flex items-center justify-between gap-4">
     <div className="flex items-center">
       <div style={{ width: `${level}rem` }} />
       {selected ? (
