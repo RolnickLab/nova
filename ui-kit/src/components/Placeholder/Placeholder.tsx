@@ -3,7 +3,7 @@ interface PlaceholderProps {
 }
 
 export const Placeholder = ({ label = "Placeholder" }: PlaceholderProps) => (
-  <div className="p-4 rounded-sm bg-muted text-muted-foreground/50 body-overline font-bold">
+  <div className="p-4 rounded-sm bg-muted text-muted-foreground/50 body-overline font-bold text-center">
     {label}
   </div>
 );
