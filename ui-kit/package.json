@@ -1,6 +1,6 @@
 {
   "name": "nova-ui-kit",
-  "version": "1.1.0",
+  "version": "1.1.4",
   "type": "module",
   "description": "Component library for multiple apps related to insect monitoring.",
   "repository": {
@@ -45,6 +45,7 @@
     "pre-publish": "rm -rf dist && npm run build"
   },
   "dependencies": {
+    "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-slider": "^1.2.1",
