@@ -1,3 +1,4 @@
+import { EXAMPLE_TAXA } from "@/stories/constants";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as Command from "./Command";
 
@@ -21,43 +22,16 @@ const meta: Meta<CommandArgs> = {
           <Command.Empty>No results found.</Command.Empty>
           {!empty && (
             <Command.Group>
-              <Command.Item value="limacodinae">
-                <Command.Taxon
-                  hasChildren
-                  label="Limacodinae"
-                  rank="Subfamily"
-                  level={0}
-                />
-              </Command.Item>
-              <Command.Item value="acharia">
-                <Command.Taxon
-                  hasChildren
-                  label="Acharia"
-                  rank="Genus"
-                  level={1}
-                />
-              </Command.Item>
-              <Command.Item value="acharia-stimulea">
-                <Command.Taxon
-                  label="Acharia stimulea"
-                  rank="Species"
-                  level={2}
-                />
-              </Command.Item>
-              <Command.Item value="achatia-distincta">
-                <Command.Taxon
-                  label="Achatia distincta"
-                  rank="Unknown"
-                  level={0}
-                />
-              </Command.Item>
-              <Command.Item value="acleris-braunana">
-                <Command.Taxon
-                  label="Acleris braunana"
-                  rank="Species"
-                  level={0}
-                />
-              </Command.Item>
+              {EXAMPLE_TAXA.map((taxon) => (
+                <Command.Item key={taxon.value} value={taxon.value}>
+                  <Command.Taxon
+                    hasChildren={taxon.hasChildren}
+                    label={taxon.label}
+                    rank={taxon.rank}
+                    level={taxon.level}
+                  />
+                </Command.Item>
+              ))}
             </Command.Group>
           )}
         </Command.List>
