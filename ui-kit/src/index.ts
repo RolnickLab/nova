@@ -5,7 +5,6 @@ export { CONSTANTS } from "./lib/constants";
 export { Box } from "./components/Box/Box";
 export { Button } from "./components/Button/Button";
 export { buttonVariants } from "./components/Button/buttonVariants";
-export * as Combobox from "./components/Combobox/Combobox";
 export * as Command from "./components/Command/Command";
 export { Input } from "./components/Input/Input";
 export * as Popover from "./components/Popover/Popover";

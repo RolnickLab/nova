@@ -1,73 +1,75 @@
+import { Button, Command, Popover } from "@/index";
+import { EXAMPLE_TAXA } from "@/stories/constants";
 import type { Meta, StoryObj } from "@storybook/react";
-import * as Command from "../Command/Command";
-import { Combobox } from "./Combobox";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
-const meta: Meta<typeof Combobox> = {
-  component: Combobox,
-  argTypes: {
-    children: {
-      control: false,
-    },
-  },
-  render: (args) => (
-    <div className="w-72">
-      <Combobox {...args}>
+const ComboboxDemo = () => {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState<string>();
+  const selectedTaxon = EXAMPLE_TAXA.find((taxon) => taxon.value === value);
+
+  return (
+    <Popover.Root open={open} onOpenChange={setOpen}>
+      <Popover.Trigger asChild>
+        <Button
+          aria-expanded={open}
+          className="w-72 justify-between text-muted-foreground font-normal"
+          role="combobox"
+          variant="outline"
+        >
+          <>
+            <span>{selectedTaxon?.label ?? "Select taxon"}</span>
+            <ChevronDown className="h-4 w-4 ml-2 shrink-0" />
+          </>
+        </Button>
+      </Popover.Trigger>
+      <Popover.Content className="w-auto p-0 overflow-hidden">
         <Command.Root>
           <Command.Input placeholder="Search taxonomy..." />
           <Command.List>
             <Command.Empty>No results found.</Command.Empty>
             <Command.Group>
-              <Command.Item value="limacodinae">
-                <Command.Taxon
-                  hasChildren
-                  label="Limacodinae"
-                  rank="Subfamily"
-                  level={0}
-                />
-              </Command.Item>
-              <Command.Item value="acharia">
-                <Command.Taxon
-                  hasChildren
-                  label="Acharia"
-                  rank="Genus"
-                  level={1}
-                />
-              </Command.Item>
-              <Command.Item value="acharia-stimulea">
-                <Command.Taxon
-                  label="Acharia stimulea"
-                  rank="Species"
-                  level={2}
-                />
-              </Command.Item>
-              <Command.Item value="achatia-distincta">
-                <Command.Taxon
-                  label="Achatia distincta"
-                  rank="Unknown"
-                  level={0}
-                />
-              </Command.Item>
-              <Command.Item value="acleris-braunana">
-                <Command.Taxon
-                  label="Acleris braunana"
-                  rank="Species"
-                  level={0}
-                />
-              </Command.Item>
+              {EXAMPLE_TAXA.map((taxon) => (
+                <Command.Item
+                  key={taxon.value}
+                  value={taxon.value}
+                  onSelect={(value) => {
+                    setValue(value);
+                    setOpen(false);
+                  }}
+                >
+                  <Command.Taxon
+                    hasChildren={taxon.hasChildren}
+                    label={taxon.label}
+                    level={taxon.level}
+                    rank={taxon.rank}
+                    selected={taxon.value === selectedTaxon?.value}
+                  />
+                </Command.Item>
+              ))}
             </Command.Group>
           </Command.List>
         </Command.Root>
-      </Combobox>
-    </div>
-  ),
+      </Popover.Content>
+    </Popover.Root>
+  );
+};
+
+const meta: Meta<typeof ComboboxDemo> = {
+  component: ComboboxDemo,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "The Combobox is built using a composition of the `<Popover />` and the `<Command />` components.",
+      },
+    },
+  },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Combobox>;
+type Story = StoryObj<typeof ComboboxDemo>;
 
-export const Default: Story = {
-  args: {
-    triggerLabel: "Select taxon",
-  },
-};
+export const Default: Story = {};
