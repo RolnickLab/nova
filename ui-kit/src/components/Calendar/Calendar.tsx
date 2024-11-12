@@ -6,12 +6,7 @@ import { buttonVariants } from "../Button/buttonVariants";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
-function Calendar({
-  className,
-  classNames,
-
-  ...props
-}: CalendarProps) {
+function Calendar({ className, classNames, ...props }: CalendarProps) {
   return (
     <DayPicker
       className={cn("p-3", className)}
