@@ -1,3 +1,4 @@
+import { EXAMPLE_PIPELINES } from "@/stories/constants";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as Select from "./Select";
 
@@ -10,14 +11,14 @@ const meta: Meta<SelectArgs> = {
   render: ({ loading, ...args }) => (
     <Select.Root {...args}>
       <Select.Trigger className="w-72" loading={loading}>
-        <Select.Value placeholder="Select a fruit" />
+        <Select.Value placeholder="Select a pipeline" />
       </Select.Trigger>
       <Select.Content>
-        <Select.Item value="apple">Apple</Select.Item>
-        <Select.Item value="banana">Banana</Select.Item>
-        <Select.Item value="blueberry">Blueberry</Select.Item>
-        <Select.Item value="grapes">Grapes</Select.Item>
-        <Select.Item value="pineapple">Pineapple</Select.Item>
+        {EXAMPLE_PIPELINES.map((pipeline) => (
+          <Select.Item key={pipeline.value} value={pipeline.value}>
+            {pipeline.label}
+          </Select.Item>
+        ))}
       </Select.Content>
     </Select.Root>
   ),
