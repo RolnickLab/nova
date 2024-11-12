@@ -26,9 +26,9 @@ const Trigger = React.forwardRef<
     {children}
     <SelectPrimitive.Icon asChild>
       {loading ? (
-        <Loader2 className="h-4 w-4 animate-spin" />
+        <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
       ) : (
-        <ChevronDown className="h-4 w-4" />
+        <ChevronDown className="h-4 w-4 shrink-0" />
       )}
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
