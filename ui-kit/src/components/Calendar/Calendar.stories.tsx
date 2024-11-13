@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { addDays } from "date-fns";
-import { Calendar } from "./Calendar";
+import { Calendar, CalendarProps } from "./Calendar";
 
-const meta: Meta<typeof Calendar> = {
+const meta: Meta<CalendarProps> = {
   component: Calendar,
   argTypes: {
     mode: {
@@ -14,7 +14,7 @@ const meta: Meta<typeof Calendar> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Calendar>;
+type Story = StoryObj<CalendarProps>;
 
 export const Default: Story = {
   args: {
