@@ -1,31 +1,39 @@
 import { cn } from "@/lib/utils";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, Loader2 } from "lucide-react";
 import * as React from "react";
 
 const Root = SelectPrimitive.Root;
+Root.displayName = "Select.Root";
 
 const Value = SelectPrimitive.Value;
+Value.displayName = "Select.Value";
 
 const Trigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> & {
+    loading?: boolean;
+  }
+>(({ className, children, loading, ...props }, ref) => (
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-12 w-full items-center justify-between rounded-md border border-input bg-background text-muted-foreground px-4 body-base ring-offset-background placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 [&>span]:pt-0.5",
+      "flex h-12 w-full items-center justify-between text-left rounded-md border border-input bg-background text-muted-foreground px-4 body-base ring-offset-background placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 [&>span]:pt-0.5 hover:bg-muted",
       className
     )}
     {...props}
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      {loading ? (
+        <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
+      ) : (
+        <ChevronDown className="h-4 w-4 shrink-0" />
+      )}
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
-Trigger.displayName = SelectPrimitive.Trigger.displayName;
+Trigger.displayName = "Select.Trigger";
 
 const ScrollUpButton = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
@@ -42,7 +50,6 @@ const ScrollUpButton = React.forwardRef<
     <ChevronUp className="h-4 w-4" />
   </SelectPrimitive.ScrollUpButton>
 ));
-ScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
 
 const ScrollDownButton = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
@@ -59,7 +66,6 @@ const ScrollDownButton = React.forwardRef<
     <ChevronDown className="h-4 w-4" />
   </SelectPrimitive.ScrollDownButton>
 ));
-ScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName;
 
 const Content = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
@@ -90,7 +96,7 @@ const Content = React.forwardRef<
     </SelectPrimitive.Content>
   </SelectPrimitive.Portal>
 ));
-Content.displayName = SelectPrimitive.Content.displayName;
+Content.displayName = "Select.Content";
 
 const Item = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
@@ -99,20 +105,17 @@ const Item = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full h-12 cursor-default select-none items-center pl-8 pr-4 body-base outline-none focus:bg-neutral-800 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex w-full h-12 cursor-default select-none items-center pl-12 pr-4 body-base outline-none focus:bg-neutral-800 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
-      </SelectPrimitive.ItemIndicator>
-    </span>
-
+    <SelectPrimitive.ItemIndicator className="absolute left-4">
+      <Check className="h-4 w-4" />
+    </SelectPrimitive.ItemIndicator>
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
 ));
-Item.displayName = SelectPrimitive.Item.displayName;
+Item.displayName = "Select.Item";
 
 export { Content, Item, Root, Trigger, Value };

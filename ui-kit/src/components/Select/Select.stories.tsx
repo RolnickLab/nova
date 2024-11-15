@@ -1,19 +1,24 @@
+import { EXAMPLE_PIPELINES } from "@/stories/constants";
 import type { Meta, StoryObj } from "@storybook/react";
 import * as Select from "./Select";
 
-const meta: Meta<typeof Select.Root> = {
+type SelectArgs = React.ComponentProps<typeof Select.Root> & {
+  loading?: boolean;
+};
+
+const meta: Meta<SelectArgs> = {
   component: Select.Root,
-  render: (args) => (
+  render: ({ loading, ...args }) => (
     <Select.Root {...args}>
-      <Select.Trigger className="w-64">
-        <Select.Value placeholder="Select a fruit" />
+      <Select.Trigger className="w-72" loading={loading}>
+        <Select.Value placeholder="Select a pipeline" />
       </Select.Trigger>
       <Select.Content>
-        <Select.Item value="apple">Apple</Select.Item>
-        <Select.Item value="banana">Banana</Select.Item>
-        <Select.Item value="blueberry">Blueberry</Select.Item>
-        <Select.Item value="grapes">Grapes</Select.Item>
-        <Select.Item value="pineapple">Pineapple</Select.Item>
+        {EXAMPLE_PIPELINES.map((pipeline) => (
+          <Select.Item key={pipeline.value} value={pipeline.value}>
+            {pipeline.label}
+          </Select.Item>
+        ))}
       </Select.Content>
     </Select.Root>
   ),
@@ -21,8 +26,10 @@ const meta: Meta<typeof Select.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Select.Root>;
+type Story = StoryObj<SelectArgs>;
 
-export const Default: Story = { args: { disabled: false } };
+export const Default: Story = { args: { disabled: false, loading: false } };
 
 export const Disabled: Story = { args: { ...Default.args, disabled: true } };
+
+export const Loading: Story = { args: { ...Default.args, loading: true } };
