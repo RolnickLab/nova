@@ -31,3 +31,10 @@ export const Inverted: Story = {
     inverted: true,
   },
 };
+
+export const InvertedColors: Story = {
+  args: {
+    ...Default.args,
+    invertedColors: true,
+  },
+};
