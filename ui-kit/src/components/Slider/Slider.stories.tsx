@@ -31,3 +31,17 @@ export const Inverted: Story = {
     inverted: true,
   },
 };
+
+export const InvertedColors: Story = {
+  args: {
+    ...Default.args,
+    invertedColors: true,
+  },
+};
+
+export const WithCustomColor: Story = {
+  args: {
+    ...Default.args,
+  },
+  render: (args) => <Slider {...args} className="[&_.range]:bg-secondary [&_.thumb]:border-secondary" />
+};
