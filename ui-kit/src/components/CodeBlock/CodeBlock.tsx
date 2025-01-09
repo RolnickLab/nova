@@ -39,23 +39,25 @@ export const CodeBlock = ({
   }, [collapsible]);
 
   return (
-    <div
-      ref={elementRef}
-      className={cn(
-        "relative p-4 rounded-xl border border-border bg-muted overflow-auto overflow-y-hidden",
-        { "max-h-32": !expanded }
-      )}
-    >
-      <pre
-        className={cn("text-xs text-muted-foreground", {
-          "text-destructive": theme === "error",
-        })}
+    <div className="relative">
+      <div
+        ref={elementRef}
+        className={cn(
+          "relative p-4 rounded-xl border border-border bg-muted overflow-auto overflow-y-hidden",
+          { "max-h-32": !expanded }
+        )}
       >
-        {snippet}
-      </pre>
-      {showFader && (
-        <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-[transparent] to-muted" />
-      )}
+        <pre
+          className={cn("text-xs text-muted-foreground", {
+            "text-destructive": theme === "error",
+          })}
+        >
+          {snippet}
+        </pre>
+        {showFader && (
+          <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-[transparent] to-muted" />
+        )}
+      </div>
       {showExpandButton ? (
         <Button
           size="icon"
