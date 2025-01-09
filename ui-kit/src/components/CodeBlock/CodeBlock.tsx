@@ -1,27 +1,26 @@
 import { cn } from "@/lib/utils";
 import { ChevronsUpDown } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "../Button/Button";
 import { useShowFader } from "./useShowFader";
 
 interface CodeBlockProps {
   collapsible?: boolean;
-  data: unknown;
+  snippet: string;
   theme?: "default" | "error";
 }
 
 export const CodeBlock = ({
   collapsible = false,
-  data,
+  snippet,
   theme = "default",
 }: CodeBlockProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(!collapsible);
-  const codeString = useMemo(() => JSON.stringify(data, null, 4), [data]);
   const showFader = useShowFader(collapsible, elementRef, [
     collapsible,
     expanded,
-    codeString,
+    snippet,
   ]);
   const showExpandButton = (() => {
     if (!collapsible) {
@@ -52,7 +51,7 @@ export const CodeBlock = ({
           "text-destructive": theme === "error",
         })}
       >
-        {codeString}
+        {snippet}
       </pre>
       {showFader && (
         <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-[transparent] to-muted" />

@@ -13,9 +13,7 @@ type Story = StoryObj<typeof CodeBlock>;
 export const Default: Story = {
   args: {
     collapsible: false,
-    data: {
-      prediction: EXAMPLE_PREDICTION,
-    },
+    snippet: JSON.stringify(EXAMPLE_PREDICTION, null, 4),
     theme: "default",
   },
 };
@@ -34,9 +32,9 @@ export const WithErrorTheme: Story = {
   },
 };
 
-export const Empty: Story = {
+export const WithOneLine: Story = {
   args: {
     ...Default.args,
-    data: {},
+    snippet: "[2025-01-09 05:19:29] INFO Changing status of job 1 to SUCCESS",
   },
 };
