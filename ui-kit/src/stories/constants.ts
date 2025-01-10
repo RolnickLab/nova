@@ -70,3 +70,34 @@ export const EXAMPLE_TAXA = [
     hasChildren: false,
   },
 ];
+
+export const EXAMPLE_TAXON = {
+  name: "Actias luna",
+  rank: "SPECIES",
+  parents: [
+    {
+      name: "Lepidoptera",
+      rank: "ORDER",
+    },
+    {
+      name: "Bombycoidea",
+      rank: "SUPERFAMILY",
+    },
+    {
+      name: "Saturniidae",
+      rank: "FAMILY",
+    },
+    {
+      name: "Saturniinae",
+      rank: "SUBFAMILY",
+    },
+    {
+      name: "Saturniini",
+      rank: "TRIBE",
+    },
+    {
+      name: "Actias",
+      rank: "GENUS",
+    },
+  ],
+};
