@@ -30,3 +30,10 @@ export const Large: Story = {
     size: "lg",
   },
 };
+
+export const WithTooltips: Story = {
+  args: {
+    ...Default.args,
+    withTooltips: true,
+  },
+};
