@@ -17,19 +17,18 @@ export const TaxonDetails = ({
   taxon,
   withTooltips,
 }: TaxonDetailsProps) => {
-  const mainParent = compact
-    ? taxon.parents.find((p) => p.rank === "FAMILY")
-    : undefined;
+  const isGenusOrBelow =
+    taxon.rank === "GENUS" ||
+    taxon.rank === "SPECIES" ||
+    taxon.rank === "SUBSPECIES";
+
+  const mainParent =
+    compact && taxon.parents.length > 3
+      ? taxon.parents.find((p) => p.rank === "FAMILY")
+      : undefined;
 
   const parents = compact
-    ? taxon.parents
-        .filter(
-          (p) =>
-            p.rank === "SUBFAMILY" ||
-            p.rank === "TRIBE" ||
-            p.rank === "SUBTRIBE"
-        )
-        .slice(-2)
+    ? taxon.parents.filter((p) => p !== mainParent).slice(mainParent ? -2 : -3)
     : taxon.parents;
 
   return (
@@ -39,6 +38,7 @@ export const TaxonDetails = ({
           className={cn("font-medium text-primary-500", {
             "body-large": size === "default",
             "body-xlarge": size === "lg",
+            italic: isGenusOrBelow,
           })}
         >
           {taxon.name}
@@ -46,10 +46,12 @@ export const TaxonDetails = ({
       </RankTooltip>
       <div className="flex items-center flex-wrap gap-1 body-small font-medium text-muted-foreground">
         {mainParent ? (
-          <div className="flex items-center gap-1">
-            <span>{mainParent.name}</span>
-            <MinusIcon className="w-4 h-4 text-neutral-400 rotate-90" />
-          </div>
+          <RankTooltip rank={withTooltips ? mainParent.rank : undefined}>
+            <div className="flex items-center gap-1">
+              <span>{mainParent.name}</span>
+              <MinusIcon className="w-4 h-4 text-neutral-400 rotate-90" />
+            </div>
+          </RankTooltip>
         ) : null}
         {parents.map((parent, index) => (
           <RankTooltip
