@@ -2,12 +2,15 @@ import { cn } from "@/lib/utils";
 import { ChevronRightIcon, MinusIcon } from "lucide-react";
 import { ReactNode } from "react";
 import * as Tooltip from "../Tooltip/Tooltip";
-import { Taxon } from "./types";
 
 interface TaxonDetailsProps {
   compact?: boolean;
   size?: "default" | "lg";
-  taxon: Taxon;
+  taxon: {
+    name: string;
+    rank: string;
+    parents: { name: string; rank: string }[];
+  };
   withTooltips?: boolean;
 }
 

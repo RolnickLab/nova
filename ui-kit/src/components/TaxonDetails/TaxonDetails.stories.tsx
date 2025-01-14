@@ -6,7 +6,6 @@ import {
 } from "@/stories/constants";
 import type { Meta, StoryObj } from "@storybook/react";
 import { TaxonDetails } from "./TaxonDetails";
-import { Taxon } from "./types";
 
 const meta: Meta<typeof TaxonDetails> = {
   component: TaxonDetails,
@@ -20,29 +19,29 @@ export const SpeciesLevel: Story = {
   args: {
     compact: false,
     size: "default",
-    taxon: EXAMPLE_TAXON_SPECIES as Taxon,
-    withTooltips: true,
+    taxon: EXAMPLE_TAXON_SPECIES,
+    withTooltips: false,
   },
 };
 
 export const GenusLevel: Story = {
   args: {
     ...SpeciesLevel.args,
-    taxon: EXAMPLE_TAXON_GENUS as Taxon,
+    taxon: EXAMPLE_TAXON_GENUS,
   },
 };
 
 export const SubfamilyLevel: Story = {
   args: {
     ...SpeciesLevel.args,
-    taxon: EXAMPLE_TAXON_SUBFAMILY as Taxon,
+    taxon: EXAMPLE_TAXON_SUBFAMILY,
   },
 };
 
 export const FamilyLevel: Story = {
   args: {
     ...SpeciesLevel.args,
-    taxon: EXAMPLE_TAXON_FAMILY as Taxon,
+    taxon: EXAMPLE_TAXON_FAMILY,
   },
 };
 
@@ -57,5 +56,12 @@ export const Large: Story = {
   args: {
     ...SpeciesLevel.args,
     size: "lg",
+  },
+};
+
+export const WithTooltips: Story = {
+  args: {
+    ...SpeciesLevel.args,
+    withTooltips: true,
   },
 };

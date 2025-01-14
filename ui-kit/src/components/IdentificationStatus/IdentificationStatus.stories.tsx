@@ -2,9 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { IdentificationStatus } from "./IdentificationStatus";
 
 const meta: Meta<typeof IdentificationStatus> = {
+  title: "Components/Identification/IdentificationStatus",
   component: IdentificationStatus,
   argTypes: {
     confidenceScore: { control: { type: "range", min: 0, max: 1, step: 0.01 } },
+    confidenceScoreThresholds: {
+      control: false,
+    },
   },
 };
 
@@ -15,6 +19,7 @@ type Story = StoryObj<typeof IdentificationStatus>;
 export const Default: Story = {
   args: {
     confidenceScore: 0.8,
+    status: "unconfirmed",
   },
 };
 
