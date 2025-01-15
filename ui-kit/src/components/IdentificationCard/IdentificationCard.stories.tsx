@@ -60,7 +60,10 @@ const meta: Meta<typeof IdentificationCardDemo> = {
     docs: {
       description: {
         component:
-          "The Identification Card is built using a composition of the components `<IdentificationCard />`, `<IdentificationDetails />`, `<IdentificationStatus />`, `<TaxonDetails />` and  `<Collapsible />`.",
+          "The Identification Card is built using a composition of the components `<IdentificationCard />`, `<IdentificationDetails />`, `<IdentificationStatus />`, `<TaxonDetails />` and  `<Collapsible />`. Checkout demo component source code in repo for implementation details.",
+      },
+      source: {
+        code: "No code available",
       },
     },
   },
