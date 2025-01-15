@@ -15,7 +15,7 @@ const meta: Meta<typeof Button> = {
       control: { type: "radio" },
     },
     variant: {
-      options: ["default", "destructive", "outline", "ghost", "link", "icon"],
+      options: ["default", "destructive", "outline", "ghost", "link"],
       control: { type: "radio" },
     },
   },
