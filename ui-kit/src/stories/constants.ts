@@ -70,3 +70,95 @@ export const EXAMPLE_TAXA = [
     hasChildren: false,
   },
 ];
+
+export const EXAMPLE_TAXON_SPECIES = {
+  name: "Actias luna",
+  rank: "SPECIES",
+  parents: [
+    {
+      name: "Lepidoptera",
+      rank: "ORDER",
+    },
+    {
+      name: "Bombycoidea",
+      rank: "SUPERFAMILY",
+    },
+    {
+      name: "Saturniidae",
+      rank: "FAMILY",
+    },
+    {
+      name: "Saturniinae",
+      rank: "SUBFAMILY",
+    },
+    {
+      name: "Saturniini",
+      rank: "TRIBE",
+    },
+    {
+      name: "Actias",
+      rank: "GENUS",
+    },
+  ],
+};
+
+export const EXAMPLE_TAXON_GENUS = {
+  name: "Actias",
+  rank: "GENUS",
+  parents: [
+    {
+      name: "Lepidoptera",
+      rank: "ORDER",
+    },
+    {
+      name: "Bombycoidea",
+      rank: "SUPERFAMILY",
+    },
+    {
+      name: "Saturniidae",
+      rank: "FAMILY",
+    },
+    {
+      name: "Saturniinae",
+      rank: "SUBFAMILY",
+    },
+    {
+      name: "Saturniini",
+      rank: "TRIBE",
+    },
+  ],
+};
+
+export const EXAMPLE_TAXON_SUBFAMILY = {
+  name: "Saturniinae",
+  rank: "SUBFAMILY",
+  parents: [
+    {
+      name: "Lepidoptera",
+      rank: "ORDER",
+    },
+    {
+      name: "Bombycoidea",
+      rank: "SUPERFAMILY",
+    },
+    {
+      name: "Saturniidae",
+      rank: "FAMILY",
+    },
+  ],
+};
+
+export const EXAMPLE_TAXON_FAMILY = {
+  name: "Saturniidae",
+  rank: "FAMILY",
+  parents: [
+    {
+      name: "Lepidoptera",
+      rank: "ORDER",
+    },
+    {
+      name: "Bombycoidea",
+      rank: "SUPERFAMILY",
+    },
+  ],
+};
