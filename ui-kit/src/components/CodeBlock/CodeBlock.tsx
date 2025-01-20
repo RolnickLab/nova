@@ -1,17 +1,22 @@
 import { cn } from "@/lib/utils";
-import { ChevronsUpDown } from "lucide-react";
+import { ChevronsUpDown, ExternalLinkIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../Button/Button";
+import { buttonVariants } from "../Button/buttonVariants";
 import { useShowFader } from "./useShowFader";
 
 interface CodeBlockProps {
+  className?: string;
   collapsible?: boolean;
+  externalLink?: string;
   snippet: string;
   theme?: "default" | "error";
 }
 
 export const CodeBlock = ({
+  className,
   collapsible = false,
+  externalLink,
   snippet,
   theme = "default",
 }: CodeBlockProps) => {
@@ -43,8 +48,12 @@ export const CodeBlock = ({
       <div
         ref={elementRef}
         className={cn(
-          "relative p-4 rounded-xl border border-border bg-muted overflow-auto overflow-y-hidden",
-          { "max-h-32": !expanded }
+          "relative p-4 rounded-md border border-border bg-muted overflow-auto overflow-y-hidden",
+          {
+            "min-h-14": !expanded,
+            "max-h-32": !!externalLink || showExpandButton,
+          },
+          className
         )}
       >
         <pre
@@ -58,16 +67,27 @@ export const CodeBlock = ({
           <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-[transparent] to-muted" />
         )}
       </div>
-      {showExpandButton ? (
-        <Button
-          size="icon"
-          variant="ghost"
-          className="absolute top-2 right-2"
-          onClick={() => setExpanded(!expanded)}
-        >
-          <ChevronsUpDown className="h-4 w-4" />
-        </Button>
-      ) : null}
+      <div className="absolute top-2 right-2 flex items-center gap-2">
+        {externalLink ? (
+          <a
+            className={buttonVariants({ variant: "outline", size: "icon" })}
+            href={externalLink}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <ExternalLinkIcon className="h-4 w-4" />
+          </a>
+        ) : null}
+        {showExpandButton ? (
+          <Button
+            onClick={() => setExpanded(!expanded)}
+            size="icon"
+            variant="outline"
+          >
+            <ChevronsUpDown className="h-4 w-4" />
+          </Button>
+        ) : null}
+      </div>
     </div>
   );
 };

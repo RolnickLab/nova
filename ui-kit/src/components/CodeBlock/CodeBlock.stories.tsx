@@ -25,6 +25,13 @@ export const Collapsible: Story = {
   },
 };
 
+export const WithExternalLink: Story = {
+  args: {
+    ...Default.args,
+    externalLink: "http://django:8000/api/v2/occurrences/12/",
+  },
+};
+
 export const WithErrorTheme: Story = {
   args: {
     ...Default.args,
@@ -32,7 +39,7 @@ export const WithErrorTheme: Story = {
   },
 };
 
-export const WithOneLine: Story = {
+export const OneLine: Story = {
   args: {
     ...Default.args,
     snippet: "[2025-01-09 05:19:29] INFO Changing status of job 1 to SUCCESS",
