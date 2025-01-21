@@ -71,6 +71,29 @@ export const EXAMPLE_TAXA = [
   },
 ];
 
+export const EXAMPLE_PREDICTION = {
+  id: 10,
+  taxon: {
+    id: 7,
+    name: "moth",
+    rank: "UNKNOWN",
+    parent: null,
+    parents: [],
+  },
+  score: 0.6834218272113759,
+  algorithm: {
+    id: 3,
+    name: "Always Moth Classifier",
+    key: "3",
+    description: "",
+    url: "",
+    version: 1,
+    version_name: "",
+    created_at: "2025-01-08T13:03:52.416740",
+  },
+  created_at: "2025-01-09T05:19:29.386562",
+};
+
 export const EXAMPLE_TAXON_SPECIES = {
   name: "Actias luna",
   rank: "SPECIES",
