@@ -61,6 +61,12 @@
   font-weight: 500;
 }
 
+.body-xlarge {
+  font-family: "Mazzard", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+}
+
 .body-large {
   font-family: "Mazzard", sans-serif;
   font-size: 18px;

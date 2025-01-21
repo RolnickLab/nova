@@ -10,7 +10,9 @@ const meta: Meta<PopoverArgs> = {
   render: ({ ...args }) => (
     <Popover.Root {...args}>
       <Popover.Trigger asChild>
-        <Button variant="outline">Open popover</Button>
+        <Button variant="outline">
+          <span>Click me!</span>
+        </Button>
       </Popover.Trigger>
       <Popover.Content>
         <Placeholder label="Content placeholder" />

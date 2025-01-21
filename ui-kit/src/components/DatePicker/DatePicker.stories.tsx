@@ -43,7 +43,10 @@ const meta: Meta<typeof DatePickerDemo> = {
     docs: {
       description: {
         component:
-          "The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.",
+          "The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components. Checkout demo component source code in repo for implementation details.",
+      },
+      source: {
+        code: "No code available",
       },
     },
   },

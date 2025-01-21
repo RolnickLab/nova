@@ -62,7 +62,10 @@ const meta: Meta<typeof ComboboxDemo> = {
     docs: {
       description: {
         component:
-          "The Combobox is built using a composition of the `<Popover />` and the `<Command />` components.",
+          "The Combobox is built using a composition of the `<Popover />` and the `<Command />` components. Checkout demo component source code in repo for implementation details.",
+      },
+      source: {
+        code: "No code available",
       },
     },
   },
