@@ -50,8 +50,8 @@ export const CodeBlock = ({
         className={cn(
           "relative p-4 rounded-md border border-border bg-muted overflow-auto overflow-y-hidden",
           {
-            "min-h-14": !expanded,
-            "max-h-32": !!externalLink || showExpandButton,
+            "min-h-14": !!externalLink || showExpandButton,
+            "max-h-32": !expanded,
           },
           className
         )}
