@@ -6,8 +6,8 @@ interface IdentificationCard {
   avatar: ReactNode;
   children?: ReactNode;
   collapsible?: boolean;
-  onOpenChange: (open: boolean) => void;
-  open: boolean;
+  onOpenChange?: (open: boolean) => void;
+  open?: boolean;
   title: string;
 }
 
@@ -34,7 +34,7 @@ export const IdentificationCard = ({
           className="w-8 h-8 hover:bg-primary-50"
           size="icon"
           variant="ghost"
-          onClick={() => onOpenChange(!open)}
+          onClick={() => onOpenChange?.(!open)}
         >
           <ChevronsUpDownIcon className="w-4 h-4" />
         </Button>
