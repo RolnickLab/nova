@@ -11,7 +11,7 @@ const meta: Meta<typeof Button> = {
       },
     },
     size: {
-      options: ["default", "icon"],
+      options: ["default", "small", "icon"],
       control: { type: "radio" },
     },
     variant: {
@@ -56,6 +56,10 @@ export const Ghost: Story = {
 
 export const Link: Story = {
   args: { ...Default.args, variant: "link" },
+};
+
+export const Small: Story = {
+  args: { ...Default.args, size: "small" },
 };
 
 export const Icon: Story = {
