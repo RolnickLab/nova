@@ -47,29 +47,31 @@ export const TaxonDetails = ({
           {taxon.name}
         </span>
       </RankTooltip>
-      <div className="flex items-center flex-wrap gap-1 body-small font-medium text-muted-foreground">
-        {mainParent ? (
-          <RankTooltip rank={withTooltips ? mainParent.rank : undefined}>
-            <div className="flex items-center gap-1">
-              <span>{mainParent.name}</span>
-              <MinusIcon className="w-4 h-4 text-neutral-400 rotate-90" />
-            </div>
-          </RankTooltip>
-        ) : null}
-        {parents.map((parent, index) => (
-          <RankTooltip
-            key={index}
-            rank={withTooltips ? parent.rank : undefined}
-          >
-            <div className="flex items-center gap-1">
-              <span>{parent.name}</span>
-              {index < parents.length - 1 ? (
-                <ChevronRightIcon className="w-4 h-4 text-neutral-400" />
-              ) : null}
-            </div>
-          </RankTooltip>
-        ))}
-      </div>
+      {parents.length ? (
+        <div className="flex items-center flex-wrap gap-1 body-small font-medium text-muted-foreground">
+          {mainParent ? (
+            <RankTooltip rank={withTooltips ? mainParent.rank : undefined}>
+              <div className="flex items-center gap-1">
+                <span>{mainParent.name}</span>
+                <MinusIcon className="w-4 h-4 text-neutral-400 rotate-90" />
+              </div>
+            </RankTooltip>
+          ) : null}
+          {parents.map((parent, index) => (
+            <RankTooltip
+              key={index}
+              rank={withTooltips ? parent.rank : undefined}
+            >
+              <div className="flex items-center gap-1">
+                <span>{parent.name}</span>
+                {index < parents.length - 1 ? (
+                  <ChevronRightIcon className="w-4 h-4 text-neutral-400" />
+                ) : null}
+              </div>
+            </RankTooltip>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };
@@ -88,7 +90,9 @@ const RankTooltip = ({
   return (
     <Tooltip.Provider delayDuration={0}>
       <Tooltip.Root>
-        <Tooltip.Trigger>{children}</Tooltip.Trigger>
+        <Tooltip.Trigger className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+          {children}
+        </Tooltip.Trigger>
         <Tooltip.Content side="bottom">
           <span>{rank}</span>
         </Tooltip.Content>

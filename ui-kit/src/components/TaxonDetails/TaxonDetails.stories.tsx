@@ -1,6 +1,7 @@
 import {
   EXAMPLE_TAXON_FAMILY,
   EXAMPLE_TAXON_GENUS,
+  EXAMPLE_TAXON_ORDER,
   EXAMPLE_TAXON_SPECIES,
   EXAMPLE_TAXON_SUBFAMILY,
 } from "@/stories/constants";
@@ -42,6 +43,13 @@ export const FamilyLevel: Story = {
   args: {
     ...SpeciesLevel.args,
     taxon: EXAMPLE_TAXON_FAMILY,
+  },
+};
+
+export const OrderLevel: Story = {
+  args: {
+    ...SpeciesLevel.args,
+    taxon: EXAMPLE_TAXON_ORDER,
   },
 };
 

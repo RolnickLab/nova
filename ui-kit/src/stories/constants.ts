@@ -185,3 +185,9 @@ export const EXAMPLE_TAXON_FAMILY = {
     },
   ],
 };
+
+export const EXAMPLE_TAXON_ORDER = {
+  name: "Lepidoptera",
+  rank: "ORDER",
+  parents: [],
+};
