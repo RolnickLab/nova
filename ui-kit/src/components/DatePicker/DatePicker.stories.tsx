@@ -15,7 +15,7 @@ const DatePickerDemo = () => {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-72 justify-between text-muted-foreground font-normal"
+          className="w-72 px-4 justify-between text-muted-foreground font-normal"
         >
           <>
             <span>{date ? format(date, "yyyy-MM-dd") : "Select a date"}</span>

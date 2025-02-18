@@ -14,7 +14,7 @@ const ComboboxDemo = () => {
       <Popover.Trigger asChild>
         <Button
           aria-expanded={open}
-          className="w-72 justify-between text-muted-foreground font-normal"
+          className="w-72 justify-between px-4 text-muted-foreground font-normal"
           role="combobox"
           variant="outline"
         >
