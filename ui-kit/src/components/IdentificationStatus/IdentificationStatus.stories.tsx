@@ -19,14 +19,13 @@ type Story = StoryObj<typeof IdentificationStatus>;
 export const Default: Story = {
   args: {
     confidenceScore: 0.8,
-    status: "unconfirmed",
   },
 };
 
-export const Confirmed: Story = {
+export const Applied: Story = {
   args: {
     ...Default.args,
-    status: "confirmed",
+    applied: true,
   },
 };
 

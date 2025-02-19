@@ -3,14 +3,14 @@ import { cn } from "@/lib/utils";
 import { CONFIDENCE_SCORE_THRESHOLDS, RADIUS, STROKE_WIDTH } from "./constants";
 
 interface IdentificationStatusProps {
+  applied?: boolean;
   confidenceScore: number;
   confidenceScoreThresholds?: { warning: number; alert: number };
-  status?: "unconfirmed" | "confirmed";
 }
 
 export const IdentificationStatus = ({
+  applied,
   confidenceScore,
-  status = "unconfirmed",
   confidenceScoreThresholds = CONFIDENCE_SCORE_THRESHOLDS,
 }: IdentificationStatusProps) => {
   const strokeColor = (() => {
@@ -30,13 +30,13 @@ export const IdentificationStatus = ({
   return (
     <div
       className={cn("relative w-10 h-10 rounded-full bg-primary-300", {
-        "bg-success-300": status === "confirmed",
+        "bg-success-300": applied,
       })}
     >
       <div
         className={cn(
           "border-4 border-neutral-200 rounded-full text-generic-white",
-          { "text-success-50": status === "confirmed" }
+          { "text-success-50": applied }
         )}
       >
         <CheckIcon />

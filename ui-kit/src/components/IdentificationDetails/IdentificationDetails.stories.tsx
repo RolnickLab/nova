@@ -17,7 +17,7 @@ const meta: Meta<typeof IdentificationDetails> = {
   },
   render: (args) => (
     <IdentificationDetails {...args}>
-      <IdentificationStatus confidenceScore={0.8} status={args.status} />
+      <IdentificationStatus applied={args.applied} confidenceScore={0.8} />
       <TaxonDetails taxon={EXAMPLE_TAXON_FAMILY} compact />
     </IdentificationDetails>
   ),
@@ -30,13 +30,12 @@ type Story = StoryObj<typeof IdentificationDetails>;
 export const Default: Story = {
   args: {
     imageSrc: "https://static.inaturalist.org/photos/416188682/small.jpg",
-    status: "unconfirmed",
   },
 };
 
 export const Confirmed: Story = {
   args: {
     ...Default.args,
-    status: "confirmed",
+    applied: true,
   },
 };

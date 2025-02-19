@@ -24,11 +24,11 @@ const IdentificationCardDemo = () => {
       title="Panama Classifier 2023"
     >
       <IdentificationDetails
+        applied
         className="border-border border-t"
         imageSrc="https://static.inaturalist.org/photos/416188682/small.jpg"
-        status="confirmed"
       >
-        <IdentificationStatus confidenceScore={0.8} status="confirmed" />
+        <IdentificationStatus applied confidenceScore={0.8} />
         <TaxonDetails taxon={EXAMPLE_TAXON_FAMILY} compact />
       </IdentificationDetails>
       <Collapsible.Root open={open} onOpenChange={setOpen}>
