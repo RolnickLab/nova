@@ -8,6 +8,7 @@ interface IdentificationCard {
   collapsible?: boolean;
   onOpenChange?: (open: boolean) => void;
   open?: boolean;
+  subTitle?: string;
   title: string;
 }
 
@@ -17,6 +18,7 @@ export const IdentificationCard = ({
   collapsible,
   open,
   onOpenChange,
+  subTitle,
   title,
 }: IdentificationCard) => (
   <div className="border border-border rounded-xl overflow-hidden">
@@ -25,9 +27,16 @@ export const IdentificationCard = ({
         <div className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-fieldguide overflow-hidden">
           {avatar}
         </div>
-        <span className="pt-0.5 body-base font-medium text-primary-500">
-          {title}
-        </span>
+        <div className="grid">
+          <span className="pt-0.5 body-base font-medium text-primary-500">
+            {title}
+          </span>
+          {subTitle?.length ? (
+            <span className="pt-0.5 body-small text-muted-foreground">
+              {subTitle}
+            </span>
+          ) : null}
+        </div>
       </div>
       {collapsible ? (
         <Button
