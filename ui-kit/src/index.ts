@@ -12,6 +12,7 @@ export * as Collapsible from "./components/Collapsible/Collapsible";
 export * as Command from "./components/Command/Command";
 export { IdentificationCard } from "./components/IdentificationCard/IdentificationCard";
 export { IdentificationDetails } from "./components/IdentificationDetails/IdentificationDetails";
+export { IdentificationScore } from "./components/IdentificationScore/IdentificationScore";
 export { IdentificationStatus } from "./components/IdentificationStatus/IdentificationStatus";
 export { Input } from "./components/Input/Input";
 export * as Popover from "./components/Popover/Popover";
