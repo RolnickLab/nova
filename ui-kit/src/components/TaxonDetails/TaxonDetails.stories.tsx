@@ -21,7 +21,6 @@ export const SpeciesLevel: Story = {
     compact: false,
     size: "default",
     taxon: EXAMPLE_TAXON_SPECIES,
-    withTooltips: false,
   },
 };
 
@@ -67,9 +66,9 @@ export const Large: Story = {
   },
 };
 
-export const WithTooltips: Story = {
+export const Clickable: Story = {
   args: {
     ...SpeciesLevel.args,
-    withTooltips: true,
+    onTaxonClick: (id: string) => alert(`Taxon with ID ${id} clicked!`),
   },
 };

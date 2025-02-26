@@ -95,30 +95,37 @@ export const EXAMPLE_PREDICTION = {
 };
 
 export const EXAMPLE_TAXON_SPECIES = {
+  id: "1",
   name: "Actias luna",
   rank: "SPECIES",
   parents: [
     {
+      id: "7",
       name: "Lepidoptera",
       rank: "ORDER",
     },
     {
+      id: "6",
       name: "Bombycoidea",
       rank: "SUPERFAMILY",
     },
     {
+      id: "5",
       name: "Saturniidae",
       rank: "FAMILY",
     },
     {
+      id: "4",
       name: "Saturniinae",
       rank: "SUBFAMILY",
     },
     {
+      id: "3",
       name: "Saturniini",
       rank: "TRIBE",
     },
     {
+      id: "2",
       name: "Actias",
       rank: "GENUS",
     },
@@ -126,26 +133,32 @@ export const EXAMPLE_TAXON_SPECIES = {
 };
 
 export const EXAMPLE_TAXON_GENUS = {
+  id: "2",
   name: "Actias",
   rank: "GENUS",
   parents: [
     {
+      id: "7",
       name: "Lepidoptera",
       rank: "ORDER",
     },
     {
+      id: "6",
       name: "Bombycoidea",
       rank: "SUPERFAMILY",
     },
     {
+      id: "5",
       name: "Saturniidae",
       rank: "FAMILY",
     },
     {
+      id: "4",
       name: "Saturniinae",
       rank: "SUBFAMILY",
     },
     {
+      id: "3",
       name: "Saturniini",
       rank: "TRIBE",
     },
@@ -153,18 +166,22 @@ export const EXAMPLE_TAXON_GENUS = {
 };
 
 export const EXAMPLE_TAXON_SUBFAMILY = {
+  id: "4",
   name: "Saturniinae",
   rank: "SUBFAMILY",
   parents: [
     {
+      id: "7",
       name: "Lepidoptera",
       rank: "ORDER",
     },
     {
+      id: "6",
       name: "Bombycoidea",
       rank: "SUPERFAMILY",
     },
     {
+      id: "5",
       name: "Saturniidae",
       rank: "FAMILY",
     },
@@ -172,14 +189,17 @@ export const EXAMPLE_TAXON_SUBFAMILY = {
 };
 
 export const EXAMPLE_TAXON_FAMILY = {
+  id: "5",
   name: "Saturniidae",
   rank: "FAMILY",
   parents: [
     {
+      id: "7",
       name: "Lepidoptera",
       rank: "ORDER",
     },
     {
+      id: "6",
       name: "Bombycoidea",
       rank: "SUPERFAMILY",
     },
@@ -187,6 +207,7 @@ export const EXAMPLE_TAXON_FAMILY = {
 };
 
 export const EXAMPLE_TAXON_ORDER = {
+  id: "7",
   name: "Lepidoptera",
   rank: "ORDER",
   parents: [],
