@@ -66,7 +66,7 @@ export const Icon: Story = {
   args: { ...Default.args, size: "icon" },
   render: (args) => (
     <Button {...args}>
-      <ChevronRight className="w-4 h-4 " />
+      <ChevronRight className="w-4 h-4" />
     </Button>
   ),
 };
