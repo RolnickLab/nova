@@ -24,7 +24,7 @@ export const IdentificationCard = ({
   <div className="border border-border rounded-xl overflow-hidden">
     <div className="flex items-center justify-between gap-4 px-4 py-3 bg-primary-50">
       <div className="flex items-center gap-4">
-        <div className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-fieldguide overflow-hidden">
+        <div className="flex items-center justify-center shrink-0 w-10 h-10 rounded-full border border-border bg-fieldguide overflow-hidden">
           {avatar}
         </div>
         <div className="grid">
