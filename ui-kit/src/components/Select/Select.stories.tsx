@@ -13,13 +13,15 @@ const meta: Meta<SelectArgs> = {
       <Select.Trigger className="w-72" loading={loading}>
         <Select.Value placeholder="Select a pipeline" />
       </Select.Trigger>
-      <Select.Content>
-        {EXAMPLE_PIPELINES.map((pipeline) => (
-          <Select.Item key={pipeline.value} value={pipeline.value}>
-            {pipeline.label}
-          </Select.Item>
-        ))}
-      </Select.Content>
+      <Select.Portal>
+        <Select.Content>
+          {EXAMPLE_PIPELINES.map((pipeline) => (
+            <Select.Item key={pipeline.value} value={pipeline.value}>
+              {pipeline.label}
+            </Select.Item>
+          ))}
+        </Select.Content>
+      </Select.Portal>
     </Select.Root>
   ),
 };
