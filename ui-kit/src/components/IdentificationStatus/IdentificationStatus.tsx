@@ -1,6 +1,6 @@
 import { CONSTANTS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { CONFIDENCE_SCORE_THRESHOLDS, RADIUS, STROKE_WIDTH } from "./constants";
+import { ProgressCircle } from "../ProgressCircle/ProgressCircle";
 
 interface IdentificationStatusProps {
   applied?: boolean;
@@ -11,9 +11,12 @@ interface IdentificationStatusProps {
 export const IdentificationStatus = ({
   applied,
   confidenceScore,
-  confidenceScoreThresholds = CONFIDENCE_SCORE_THRESHOLDS,
+  confidenceScoreThresholds = {
+    warning: 0.8,
+    alert: 0.6,
+  },
 }: IdentificationStatusProps) => {
-  const strokeColor = (() => {
+  const color = (() => {
     if (confidenceScore >= confidenceScoreThresholds.warning) {
       return CONSTANTS.COLORS.success[500];
     }
@@ -23,41 +26,17 @@ export const IdentificationStatus = ({
     return CONSTANTS.COLORS.alert[600];
   })();
 
-  const normalizedRadius = RADIUS - STROKE_WIDTH / 2;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - confidenceScore * circumference;
-
   return (
-    <div
-      className={cn("relative w-10 h-10 rounded-full bg-primary-300", {
-        "bg-success-300": applied,
-      })}
-    >
+    <ProgressCircle color={color} progress={confidenceScore} size="lg">
       <div
         className={cn(
-          "border-4 border-neutral-200 rounded-full text-generic-white",
-          { "text-success-50": applied }
+          "bg-primary-300 border-4 border-neutral-200 rounded-full text-generic-white",
+          { "bg-success-300 text-success-50": applied }
         )}
       >
         <CheckIcon />
       </div>
-      <div className="absolute w-full h-full top-0 left-0">
-        <svg height={RADIUS * 2} width={RADIUS * 2} transform="rotate(-90)">
-          <circle
-            className="transition-colors"
-            cx={RADIUS}
-            cy={RADIUS}
-            fill="transparent"
-            r={normalizedRadius}
-            stroke={strokeColor}
-            strokeDasharray={circumference + " " + circumference}
-            strokeDashoffset={strokeDashoffset}
-            strokeLinecap="round"
-            strokeWidth={STROKE_WIDTH}
-          />
-        </svg>
-      </div>
-    </div>
+    </ProgressCircle>
   );
 };
 

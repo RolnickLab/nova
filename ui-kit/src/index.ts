@@ -16,6 +16,7 @@ export { IdentificationScore } from "./components/IdentificationScore/Identifica
 export { IdentificationStatus } from "./components/IdentificationStatus/IdentificationStatus";
 export { Input } from "./components/Input/Input";
 export * as Popover from "./components/Popover/Popover";
+export { ProgressCircle } from "./components/ProgressCircle/ProgressCircle";
 export * as Select from "./components/Select/Select";
 export { Slider } from "./components/Slider/Slider";
 export { TaxonDetails } from "./components/TaxonDetails/TaxonDetails";
