@@ -42,6 +42,10 @@ export const Secondary: Story = {
   args: { ...Default.args, variant: "secondary" },
 };
 
+export const Success: Story = {
+  args: { ...Default.args, variant: "success" },
+};
+
 export const Destructive: Story = {
   args: { ...Default.args, variant: "destructive" },
 };

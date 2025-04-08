@@ -119,6 +119,10 @@ const COLOR_THEME = {
     DEFAULT: COLORS.alert[500],
     foreground: COLORS.generic.white,
   },
+  success: {
+    DEFAULT: COLORS.success[500],
+    foreground: COLORS.generic.white,
+  },
   destructive: {
     DEFAULT: COLORS.destructive[500],
     foreground: COLORS.generic.white,
