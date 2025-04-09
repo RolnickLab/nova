@@ -19,6 +19,9 @@ const IdentificationCardDemo = () => {
     <IdentificationCard
       avatar={<img alt="" src={avatar} />}
       collapsible
+      collapsibleTriggerTooltip={
+        open ? "Hide top predictions" : "Show top predictions"
+      }
       onOpenChange={setOpen}
       open={open}
       title="Panama Classifier 2023"

@@ -1,11 +1,13 @@
 import { ChevronsUpDownIcon } from "lucide-react";
 import { ReactNode } from "react";
 import { Button } from "../Button/Button";
+import * as Tooltip from "../Tooltip/Tooltip";
 
 interface IdentificationCard {
   avatar: ReactNode;
   children?: ReactNode;
   collapsible?: boolean;
+  collapsibleTriggerTooltip?: string;
   onOpenChange?: (open: boolean) => void;
   open?: boolean;
   subTitle?: string;
@@ -16,8 +18,9 @@ export const IdentificationCard = ({
   avatar,
   children,
   collapsible,
-  open,
+  collapsibleTriggerTooltip,
   onOpenChange,
+  open,
   subTitle,
   title,
 }: IdentificationCard) => (
@@ -39,16 +42,41 @@ export const IdentificationCard = ({
         </div>
       </div>
       {collapsible ? (
-        <Button
-          className="w-8 h-8 hover:bg-primary-50"
-          size="icon"
-          variant="ghost"
-          onClick={() => onOpenChange?.(!open)}
-        >
-          <ChevronsUpDownIcon className="w-4 h-4" />
-        </Button>
+        <ButtonWrapper tooltip={collapsibleTriggerTooltip}>
+          <Button
+            className="w-8 h-8 hover:bg-primary-50"
+            size="icon"
+            variant="ghost"
+            onClick={() => onOpenChange?.(!open)}
+          >
+            <ChevronsUpDownIcon className="w-4 h-4" />
+          </Button>
+        </ButtonWrapper>
       ) : null}
     </div>
     {children}
   </div>
 );
+
+const ButtonWrapper = ({
+  children,
+  tooltip,
+}: {
+  children: ReactNode;
+  tooltip?: string;
+}) => {
+  if (!tooltip) {
+    return children;
+  }
+
+  return (
+    <Tooltip.Provider delayDuration={0}>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
+        <Tooltip.Content side="bottom">
+          <span>{tooltip}</span>
+        </Tooltip.Content>
+      </Tooltip.Root>
+    </Tooltip.Provider>
+  );
+};
