@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { ChevronsUpDownIcon } from "lucide-react";
 import { ReactNode } from "react";
 import { Button } from "../Button/Button";
@@ -12,6 +13,7 @@ interface IdentificationCard {
   open?: boolean;
   subTitle?: string;
   title: string;
+  onTitleClick?: () => void;
 }
 
 export const IdentificationCard = ({
@@ -23,6 +25,7 @@ export const IdentificationCard = ({
   open,
   subTitle,
   title,
+  onTitleClick,
 }: IdentificationCard) => (
   <div className="border border-border rounded-xl overflow-hidden">
     <div className="flex items-center justify-between gap-4 px-4 py-3 bg-primary-50">
@@ -31,7 +34,14 @@ export const IdentificationCard = ({
           {avatar}
         </div>
         <div className="grid">
-          <span className="pt-0.5 body-base font-medium text-primary-500">
+          <span
+            tabIndex={onTitleClick ? 0 : -1}
+            className={cn("pt-0.5 body-base text-foreground", {
+              "font-medium text-primary-600 hover:opacity-70 hover:cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2":
+                onTitleClick,
+            })}
+            onClick={onTitleClick}
+          >
             {title}
           </span>
           {subTitle?.length ? (
