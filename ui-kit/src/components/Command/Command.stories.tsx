@@ -64,12 +64,18 @@ export const WithTaxa: Story = {
           {!empty && (
             <Command.Group>
               {EXAMPLE_TAXA.map((taxon) => (
-                <Command.Item key={taxon.value} value={taxon.value}>
+                <Command.Item
+                  key={taxon.value}
+                  className="h-16 pr-2"
+                  value={taxon.value}
+                >
                   <Command.Taxon
                     hasChildren={taxon.hasChildren}
+                    image={taxon.image}
                     label={taxon.label}
-                    rank={taxon.rank}
                     level={taxon.level}
+                    rank={taxon.rank}
+                    selected={taxon.selected}
                   />
                 </Command.Item>
               ))}

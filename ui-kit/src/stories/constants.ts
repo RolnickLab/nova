@@ -40,6 +40,7 @@ export const EXAMPLE_TAXA = [
     rank: "Subfamily",
     level: 0,
     hasChildren: true,
+    image: "https://static.inaturalist.org/photos/1350200/medium.jpg",
   },
   {
     value: "acharia",
@@ -47,6 +48,8 @@ export const EXAMPLE_TAXA = [
     rank: "Genus",
     level: 1,
     hasChildren: true,
+    image:
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/31459890/medium.jpg",
   },
   {
     value: "acharia-stimule",
@@ -54,6 +57,9 @@ export const EXAMPLE_TAXA = [
     rank: "Species",
     level: 2,
     hasChildren: false,
+    image:
+      "https://inaturalist-open-data.s3.amazonaws.com/photos/501685823/medium.jpg",
+    selected: true,
   },
   {
     value: "achatia-distincta",

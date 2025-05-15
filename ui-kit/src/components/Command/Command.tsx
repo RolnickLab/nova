@@ -1,6 +1,12 @@
 import { cn } from "@/lib/utils";
 import { Command as CommandPrimitive } from "cmdk";
-import { Check, ChevronDown, Loader2, Search } from "lucide-react";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ImageIcon,
+  Loader2,
+  Search,
+} from "lucide-react";
 import * as React from "react";
 
 const Root = React.forwardRef<
@@ -101,12 +107,14 @@ Item.displayName = "Command.Item";
 
 const Taxon = ({
   hasChildren,
+  image,
   label,
   level = 0,
   rank,
   selected,
 }: {
   hasChildren?: boolean;
+  image?: string;
   label: string;
   level?: number;
   rank: string;
@@ -114,17 +122,28 @@ const Taxon = ({
 }) => (
   <div className="w-full h-full flex items-center justify-between gap-4">
     <div className="flex items-center">
-      <div style={{ width: `${level}rem` }} />
+      <div style={{ width: `${level * 0.5}rem` }} />
       {selected ? (
-        <Check className="w-4 h-4 mr-4" />
+        <CheckIcon className="w-4 h-4 mr-4" />
       ) : (
-        <ChevronDown
-          className={cn("w-4 h-4 mr-4 invisible", hasChildren && "visible")}
+        <ChevronDownIcon
+          className={cn("w-4 h-4 mr-4 opacity-50 invisible", {
+            visible: hasChildren,
+          })}
         />
       )}
-      <span className="body-base">{label}</span>
+      <div className="grid gap-2">
+        <span className="body-small">{label}</span>
+        <span className="body-overline-xsmall">{rank}</span>
+      </div>
     </div>
-    <span className="body-overline-small">{rank}</span>
+    <div className="relative w-12 h-12 flex items-center justify-center bg-neutral-600 rounded-md overflow-hidden">
+      {image ? (
+        <img className="w-full h-full object-contain" src={image} />
+      ) : (
+        <ImageIcon className="w-4 h-4" />
+      )}
+    </div>
   </div>
 );
 Taxon.displayName = "Command.Taxon";
