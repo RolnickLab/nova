@@ -19,5 +19,6 @@ export * as Popover from "./components/Popover/Popover";
 export { ProgressCircle } from "./components/ProgressCircle/ProgressCircle";
 export * as Select from "./components/Select/Select";
 export { Slider } from "./components/Slider/Slider";
+export { Switch } from "./components/Switch/Switch";
 export { TaxonDetails } from "./components/TaxonDetails/TaxonDetails";
 export * as Tooltip from "./components/Tooltip/Tooltip";
