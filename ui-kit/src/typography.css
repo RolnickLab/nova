@@ -112,3 +112,10 @@
   line-height: 20px;
   font-variant-numeric: lining-nums tabular-nums;
 }
+
+.body-number-small {
+  font-family: "Mazzard", sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  font-variant-numeric: lining-nums tabular-nums;
+}
