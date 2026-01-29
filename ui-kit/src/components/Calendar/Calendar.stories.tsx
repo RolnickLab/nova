@@ -6,7 +6,7 @@ const meta: Meta<CalendarProps> = {
   component: Calendar,
   argTypes: {
     mode: {
-      options: ["default", "single", "multiple", "range"],
+      options: ["single", "multiple", "range"],
       control: { type: "radio" },
     },
   },
@@ -18,13 +18,19 @@ type Story = StoryObj<CalendarProps>;
 
 export const Default: Story = {
   args: {
-    mode: "default",
+    mode: "single",
+  },
+};
+
+export const WithMonthAndYearSelector: Story = {
+  args: {
+    captionLayout: "dropdown",
+    mode: "single",
   },
 };
 
 export const WithSelectedDate: Story = {
   args: {
-    ...Default.args,
     mode: "single",
     selected: new Date(),
   },
@@ -32,7 +38,6 @@ export const WithSelectedDate: Story = {
 
 export const WithSelectedDates: Story = {
   args: {
-    ...Default.args,
     mode: "multiple",
     selected: [addDays(new Date(), -2), new Date(), addDays(new Date(), 2)],
   },
@@ -40,7 +45,6 @@ export const WithSelectedDates: Story = {
 
 export const WithSelectedDateRange: Story = {
   args: {
-    ...Default.args,
     mode: "range",
     selected: {
       from: addDays(new Date(), -2),
